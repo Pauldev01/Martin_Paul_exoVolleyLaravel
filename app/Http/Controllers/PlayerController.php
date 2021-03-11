@@ -43,7 +43,30 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->src != null) {
+            $store = new Photo;
+            $store->src = $request->file('src')->hashName();
+            $request->file('src')->storePublicly('img/', 'public');
+            $store->save();
+        }
+
+        $newEntry = new Player;
+        $newEntry->name = $request->name;
+        $newEntry->surname = $request->surname;
+        $newEntry->age = $request->age;
+        $newEntry->phone = $request->phone;
+        $newEntry->email = $request->email;
+        $newEntry->gender = $request->gender;
+        $newEntry->country = $request->country;
+        $newEntry->team_id = $request->team_id;
+        $newEntry->position = $request->position;
+        if ($request->src != null) {
+            $newEntry->photo_id = $store->id;
+        } else {
+            $newEntry->photo_id = 1;
+        }
+        $newEntry->save();
+        return redirect()->back();
     }
 
     /**
