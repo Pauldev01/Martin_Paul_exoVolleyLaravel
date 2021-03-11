@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Player::factory()->count(30)->create();
-        // Team::factory()->count(10)->create();
         $this->call([
             TeamSeeder::class
         ]);

@@ -31,7 +31,7 @@ class PlayerFactory extends Factory
             "country"=>$this->faker->country,
             "position"=>$this->faker->firstName,
             // "team_id"=>$this->faker->numberBetween(0, 10),
-
+            // 'photo_id'=>$this->faker->numberBetween(0, 1)
         ];
     }
 }
