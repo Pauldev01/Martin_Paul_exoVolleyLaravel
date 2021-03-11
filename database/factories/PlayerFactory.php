@@ -29,9 +29,9 @@ class PlayerFactory extends Factory
             "email"=>$this->faker->email,
             "gender"=>$this->faker->title,
             "country"=>$this->faker->country,
-            // "position"=>$this->faker->firstName,
-            "team_id"=>$this->faker->numberBetween(0, 10),
-            
+            "position"=>$this->faker->firstName,
+            // "team_id"=>$this->faker->numberBetween(0, 10),
+            // 'photo_id'=>$this->faker->numberBetween(0, 1)
         ];
     }
 }
