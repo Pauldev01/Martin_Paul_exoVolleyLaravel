@@ -15,14 +15,14 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('city', 150);
-            $table->string('country', 150);
-            $table->integer('max_player');
-            $table->integer('max_front');
-            $table->integer('max_back');
-            $table->integer('max_center');
-            $table->integer('max_replace');
+            $table->string('name', 150)->nullable();
+            $table->string('city', 150)->nullable();
+            $table->string('country', 150)->nullable();
+            $table->integer('max_player')->nullable();
+            $table->integer('max_front')->nullable();
+            $table->integer('max_back')->nullable();
+            $table->integer('max_center')->nullable();
+            $table->integer('max_replace')->nullable();
             $table->timestamps();
         });
     }

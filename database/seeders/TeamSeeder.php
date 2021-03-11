@@ -17,6 +17,16 @@ class TeamSeeder extends Seeder
        DB::table('teams')->insert(
            [
                [
+                "name"=>"No team",
+                "city"=>"",
+                "country"=>"",
+                "max_player"=>"999999",
+                "max_front"=>"999999",
+                "max_back"=>"999999",
+                "max_center"=>"999999",
+                "max_replace"=>"999999",
+               ],
+               [
                 "name"=>"Municipal Fire Fighter SeaShell's",
                 "city"=>"Charleroi",
                 "country"=>"Belgium",

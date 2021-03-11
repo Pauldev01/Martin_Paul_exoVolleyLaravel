@@ -23,7 +23,7 @@ class CreatePlayersTable extends Migration
             $table->string('gender', 150);
             $table->string('country', 150);
             $table->string('position', 150);
-            $table->unsignedBigInteger('team_id')->nullable();
+            $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
             $table->unsignedBigInteger('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos');

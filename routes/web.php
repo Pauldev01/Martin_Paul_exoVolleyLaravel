@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TeamController;
+use App\Models\Photo;
+use App\Models\Player;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +19,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $players = Player::all();
+    $teams = Team::where('id', '>', 1)->get();
+    $photos = Photo::all();
+    return view('welcome', compact('players', 'teams', 'photos'));
 });
+
+Route::resource('players', PlayerController::class);
+Route::resource('teams', TeamController::class);

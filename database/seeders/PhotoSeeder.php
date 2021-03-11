@@ -16,7 +16,7 @@ class PhotoSeeder extends Seeder
     {
         DB::table('photos')->insert([
             [
-                "src"=>'img/photo.jpeg'
+                "src"=>'photo.jpg'
             ]
         ]);
     }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use App\Models\Player;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -14,7 +16,10 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        $teams = Team::where('id', '>', 1)->get();
+        $photos = Photo::all();
+        return view('pages.player.players', compact('players', 'teams', 'photos'));
     }
 
     /**
@@ -24,7 +29,10 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        $players = Player::all();
+        $teams = Team::all();
+        $photos = Photo::all();
+        return view('pages.player.create', compact('players', 'teams', 'photos'));
     }
 
     /**
@@ -44,9 +52,10 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function show(Player $player)
+    public function show($id)
     {
-        //
+        $show = Player::find($id);
+        return view('pages.player.show', compact('show'));
     }
 
     /**

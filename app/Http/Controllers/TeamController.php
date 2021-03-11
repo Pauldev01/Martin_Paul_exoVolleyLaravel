@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
+use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,10 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        $teams = Team::where('id', '>', 1)->get();
+        $photos = Photo::all();
+        return view('pages.team.teams', compact('players', 'teams', 'photos'));
     }
 
     /**
@@ -24,7 +29,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.team.create');
     }
 
     /**
@@ -35,7 +40,17 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newEntry = new Team;
+        $newEntry->name = $request->name;
+        $newEntry->city = $request->city;
+        $newEntry->country = $request->country;
+        $newEntry->max_player = $request->max_player;
+        $newEntry->max_front = $request->max_front;
+        $newEntry->max_back = $request->max_back;
+        $newEntry->max_center = $request->max_center;
+        $newEntry->max_replace = $request->max_replace;
+        $newEntry->save();
+        return redirect()->back();
     }
 
     /**
@@ -44,9 +59,10 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show($id)
     {
-        //
+        $show = Team::find($id);
+        return view('pages.team.show', compact('show'));
     }
 
     /**
@@ -57,7 +73,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        
     }
 
     /**

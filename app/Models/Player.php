@@ -10,10 +10,10 @@ class Player extends Model
     use HasFactory;
     public function photos()
     {
-        return $this->hasOne(Photo::class);
+        return $this->belongsTo(Photo::class,'photo_id');
     }
     public function teams()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class,'team_id');
     }
 }
