@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
+    public function photos()
+    {
+        return $this->hasOne(Photo::class);
+    }
+    public function teams()
+    {
+        return $this->hasOne(Team::class);
+    }
 }

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     use HasFactory;
+    public function players()
+    {
+        return $this->hasMany(Player::class,'photo_id');
+    }
 }
