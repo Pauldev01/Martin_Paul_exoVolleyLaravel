@@ -6,6 +6,7 @@ use App\Models\Photo;
 use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PlayerController extends Controller
 {
@@ -87,9 +88,12 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function edit(Player $player)
+    public function edit($id)
     {
-        //
+        $show = Player::find($id);
+        $teams = Team::all();
+        $photos = Photo::find($show->photo_id);
+        return view('pages.player.edit', compact('show', 'photos', 'teams'));
     }
 
     /**
@@ -99,9 +103,35 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Player $player)
+    public function update(Request $request, $id)
     {
-        //
+        $updateEntry = Player::find($id);
+        $img = Photo::find($updateEntry->photo_id);
+        if ($img->src != 'photo.jpg') {
+            Storage::disk('public')->delete('img/'.$img->src);
+            $request->file('src')->storePublicly('img/', 'public');
+            $img->src = $request->file('src')->hashName();
+        } else {
+            $request->file('src')->storePublicly('img/', 'public');
+            $imgNew = new Photo;
+            $imgNew->src = $request->file('src')->hashName();
+            $imgNew->save();
+        }
+        $img->save();
+
+        $updateEntry->name = $request->name;
+        $updateEntry->surname = $request->surname;
+        $updateEntry->age = $request->age;
+        $updateEntry->phone = $request->phone;
+        $updateEntry->email = $request->email;
+        $updateEntry->gender = $request->gender;
+        $updateEntry->country = $request->country;
+        $updateEntry->team_id = $request->team_id;
+        $updateEntry->position = $request->position;
+        $updateEntry->photo_id = $imgNew->id ? $imgNew->id : $img->id;
+        
+        $updateEntry->save();
+        return redirect('/players');
     }
 
     /**
@@ -110,8 +140,17 @@ class PlayerController extends Controller
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Player $player)
+    public function destroy($id)
     {
-        //
+        $destroy = Player::find($id);
+        $destroyImg = Photo::find($destroy->photo_id);
+        if($destroyImg->src != 'photo.jpg')
+        {
+            Storage::disk('public')->delete('img/'.$destroyImg->src);
+            $destroy->delete();
+            $destroyImg->delete();
+        }
+        $destroy->delete();
+        return redirect('/players');
     }
 }

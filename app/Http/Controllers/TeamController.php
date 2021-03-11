@@ -62,7 +62,9 @@ class TeamController extends Controller
     public function show($id)
     {
         $show = Team::find($id);
-        return view('pages.team.show', compact('show'));
+        $players = Player::where('team_id', '=', $id)->get();
+        $photos = Photo::all();
+        return view('pages.team.show', compact('show', 'players', 'photos'));
     }
 
     /**
@@ -71,9 +73,10 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit($id)
     {
-        
+        $show = Team::find($id);
+        return view('pages.team.edit', compact('show'));
     }
 
     /**
@@ -83,9 +86,19 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, $id)
     {
-        //
+        $updateEntry = Team::find($id);
+        $updateEntry->name = $request->name;
+        $updateEntry->city = $request->city;
+        $updateEntry->country = $request->country;
+        $updateEntry->max_player = $request->max_player;
+        $updateEntry->max_front = $request->max_front;
+        $updateEntry->max_back = $request->max_back;
+        $updateEntry->max_center = $request->max_center;
+        $updateEntry->max_replace = $request->max_replace;
+        $updateEntry->save();
+        return redirect('/teams');
     }
 
     /**
@@ -94,8 +107,10 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy($id)
     {
-        //
+        $destroy = Team::find($id);
+        $destroy->delete();
+        return redirect('/teams');
     }
 }
