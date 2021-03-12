@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TeamController;
 use App\Models\Photo;
@@ -27,3 +28,4 @@ Route::get('/', function () {
 
 Route::resource('players', PlayerController::class);
 Route::resource('teams', TeamController::class);
+Route::resource('dash', DashboardController::class);
