@@ -13,12 +13,12 @@
         <tr>
             <td scope="row">{{$item->name}}</td>
             <td>{{$item->city}}</td>
-            <td>0 / {{$item->max_player}}</td>
+            <td>{{count($players->where('team_id', $item->id))}} / {{$item->max_player}}</td>
             <td>
                 <form action="/teams/{{$item->id}}" method="POST">
-                    @csrf
-                    @method('GET')
-                    <button class="btn btn-info" type="submit">Details</button>
+                  @csrf
+                  @method('GET')
+                  <button class="btn btn-info" type="submit">Details</button>
                 </form>
             </td>
         </tr>

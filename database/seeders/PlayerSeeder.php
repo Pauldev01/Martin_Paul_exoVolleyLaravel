@@ -48,7 +48,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Syrian Arab Republic",
                 "position"=>"replace",
-                "team_id"=>"5",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [
@@ -228,7 +228,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"France",
                 "position"=>"replace",
-                "team_id"=>"7",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [
@@ -240,7 +240,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Panama",
                 "position"=>"back",
-                "team_id"=>"6",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [

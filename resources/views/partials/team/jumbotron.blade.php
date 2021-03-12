@@ -3,7 +3,7 @@
     <p class="lead">City : {{$show->city}}</p>
     <p class="lead">Country : {{$show->country}}</p>
     <hr class="my-4">
-    <p>Numbers of players : 0 / {{$show->max_player}}</p>
+    <p>Numbers of players : {{count($players)}} / {{$show->max_player}}</p>
     <div class="row">
         <form class="mx-3" action="/teams/{{$show->id}}/edit" method="POST">
             @csrf

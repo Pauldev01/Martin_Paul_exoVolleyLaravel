@@ -39,7 +39,7 @@ class TeamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {        
         $newEntry = new Team;
         $newEntry->name = $request->name;
         $newEntry->city = $request->city;
