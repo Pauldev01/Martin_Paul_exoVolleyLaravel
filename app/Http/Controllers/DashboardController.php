@@ -22,20 +22,16 @@ class DashboardController extends Controller
         $teams = Team::all();
         $teamMatch = Team::where('id', '>', 1)->get();
         $photos = Photo::all();
+
+        // Player who play for their country
         $playerCountry = [];
-        // foreach ($teamMatch as $team) {
-        //     $i = 0;
-        //     $i ++;
-        //     foreach ($playersWith as $player) {
-        //         // dd($player->country);
-        //         // dd($team->country);
-        //         if ($player->team_id == $team->id && $player->country == $team->country) {
-        //             array_push($playerCountry, $player);
-        //         }
-        //     }
-        // }
-        // dd($playerCountry);
-        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout'));
+        foreach ($playersWith as $player) {
+            if ($player->country == $player->teams->country) {
+                array_push($playerCountry, $player);
+            }
+        }
+
+        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout', 'playerCountry'));
     }
 
     /**

@@ -19,13 +19,10 @@
     <div class="jumbotron">
         <h1 class="display-4">Player who defends they're country</h1>
         <hr class="my-4">
-        {{-- {{dd($teams->map(function($team){return $team->country;}))}} --}}
-        @foreach ($playersWith->random(19) as $item)
-        {{-- {{dd($item->country)}} --}}
-            @if ($item->country == $item->teams->country)
-                <p class="lead">{{$item->name}} {{$item->surname}} ({{$item->country}})</p>
-                @break
-            @endif
+        <span class="d-none">{{shuffle($playerCountry)}}</span>
+        @foreach ($playerCountry as $item)
+            <p class="lead">{{$item->name}} {{$item->surname}} ({{$item->country}})</p>
+            @break
         @endforeach
     </div>
 
