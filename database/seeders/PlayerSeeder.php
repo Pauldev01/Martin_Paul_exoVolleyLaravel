@@ -180,7 +180,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Philippines",
                 "position"=>"front",
-                "team_id"=>"3",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -216,7 +216,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Belgium",
                 "position"=>"center",
-                "team_id"=>"10",
+                "team_id"=>"2",
                 "photo_id"=>"1"
             ],
             [
@@ -288,7 +288,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Venezuela",
                 "position"=>"center",
-                "team_id"=>"2",
+                "team_id"=>"3",
                 "photo_id"=>"1"
             ],
             [

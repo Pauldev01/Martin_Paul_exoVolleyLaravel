@@ -19,8 +19,13 @@
     <div class="jumbotron">
         <h1 class="display-4">Player who defends they're country</h1>
         <hr class="my-4">
-        @foreach ($playersWith->where('country', '=', $teams[2]->country) as $item)
-            <p class="lead">{{$item->name}} {{$item->surname}}</p>
+        {{-- {{dd($teams->map(function($team){return $team->country;}))}} --}}
+        @foreach ($playersWith->random(19) as $item)
+        {{-- {{dd($item->country)}} --}}
+            @if ($item->country == $item->teams->country)
+                <p class="lead">{{$item->name}} {{$item->surname}} ({{$item->country}})</p>
+                @break
+            @endif
         @endforeach
     </div>
 
