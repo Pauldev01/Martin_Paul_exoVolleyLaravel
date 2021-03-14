@@ -18,9 +18,8 @@ class DashboardController extends Controller
     {
         $players = Player::all();
         $playersWith = Player::where('team_id', '!=', 1)->get();
-        $playersWithout = Player::where('team_id', '=', 1)->get();
+        $playersWithout = Player::where('team_id', '=', NULL)->get();
         $teams = Team::all();
-        $teamMatch = Team::where('id', '>', 1)->get();
         $photos = Photo::all();
 
         // Player who play for their country
@@ -49,33 +48,17 @@ class DashboardController extends Controller
 
         // Team EU
         $euTeams = [];
+        $outEuTeams = [];
         $euCountry = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Republic of Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden'];
         foreach ($teams as $team) {
-            foreach ($euCountry as $eu) {
-                if($team->country == $eu) {
-                    array_push($euTeams, $team);
-                }
+            if(in_array($team->country,$euCountry)) {
+                array_push($euTeams, $team);
+            } else {
+                array_push($outEuTeams, $team);
             }
         }
 
-        // Team outside EU
-        // $outEuTeams = $teamMatch->filter(function($value, $euTeams){
-        //     return $value != $euTeams[0]->name || $value != $euTeams[1]->name || $value != $euTeams[2]->name;
-        // });
-        // // foreach ($teamMatch as $team) {
-        //     foreach ($euCountry as $eu) {
-        //         // dd($eu);
-        //         if($team->name != $eu) {
-
-        //             array_push($outEuTeams, $team);
-        //         } else {
-        //         }
-        //     }
-        // }
-
-        // dd($outEuTeams);
-
-        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout', 'playerCountry', 'fullTeam', 'emptyTeam', 'euTeams', 'teamMatch'));
+        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout', 'playerCountry', 'fullTeam', 'emptyTeam', 'euTeams', 'outEuTeams'));
     }
 
     /**

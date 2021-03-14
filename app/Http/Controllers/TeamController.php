@@ -17,7 +17,7 @@ class TeamController extends Controller
     public function index()
     {
         $players = Player::all();
-        $teams = Team::where('id', '>', 1)->get();
+        $teams = Team::all();
         $photos = Photo::all();
         return view('pages.team.teams', compact('players', 'teams', 'photos'));
     }

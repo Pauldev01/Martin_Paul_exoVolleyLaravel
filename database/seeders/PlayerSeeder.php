@@ -72,7 +72,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Belgium",
                 "position"=>"center",
-                "team_id"=>"11",
+                "team_id"=>"10",
                 "photo_id"=>"1"
             ],
             [
@@ -132,7 +132,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Aruba",
                 "position"=>"front",
-                "team_id"=>"1",
+                "team_id"=>NULL,
                 "photo_id"=>"1"
             ],
             [
@@ -156,7 +156,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Russian Federation",
                 "position"=>"center",
-                "team_id"=>"1",
+                "team_id"=>NULL,
                 "photo_id"=>"1"
             ],
             [
@@ -252,7 +252,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Taiwan",
                 "position"=>"center",
-                "team_id"=>"1",
+                "team_id"=>"8",
                 "photo_id"=>"1"
             ],
             [
@@ -276,7 +276,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Japan",
                 "position"=>"back",
-                "team_id"=>"1",
+                "team_id"=>NULL,
                 "photo_id"=>"1"
             ],
             [
@@ -324,7 +324,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Ethiopia",
                 "position"=>"center",
-                "team_id"=>"1",
+                "team_id"=>NULL,
                 "photo_id"=>"1"
             ],
             [
@@ -336,7 +336,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Seychelles",
                 "position"=>"back",
-                "team_id"=>"11",
+                "team_id"=>"10",
                 "photo_id"=>"1"
             ],
             [
@@ -372,7 +372,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"San Marino",
                 "position"=>"front",
-                "team_id"=>"8",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [
@@ -396,7 +396,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"San Marino",
                 "position"=>"front",
-                "team_id"=>"8",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [
@@ -408,7 +408,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"France",
                 "position"=>"center",
-                "team_id"=>"8",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ],
             [
@@ -420,7 +420,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Bolivia",
                 "position"=>"front",
-                "team_id"=>"11",
+                "team_id"=>"10",
                 "photo_id"=>"1"
             ],
             [
@@ -432,7 +432,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Philippines",
                 "position"=>"replace",
-                "team_id"=>"11",
+                "team_id"=>"1",
                 "photo_id"=>"1"
             ]
         ]);

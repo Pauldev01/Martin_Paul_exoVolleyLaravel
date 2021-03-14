@@ -33,14 +33,9 @@
     <div class="jumbotron">
         <h1 class="display-4">Teams outside EU</h1>
         <hr class="my-4">
-        @foreach ($teamMatch as $item)
-            @foreach ($euTeams as $eu)
-                @if ($item->name == $eu->name)
-                    <p class="lead">{{$item->country}}</p>
-                @else
-                    <p class="lead">{{$item->country}}</p>
-                @endif
-            @endforeach
+        <span class="d-none">{{shuffle($outEuTeams)}}</span>
+        @foreach ($outEuTeams as $item)
+            <p class="lead">{{$item->name}}</p>
         @endforeach
     </div>
 </section>

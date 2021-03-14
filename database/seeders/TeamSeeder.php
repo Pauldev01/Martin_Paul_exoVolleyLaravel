@@ -17,16 +17,6 @@ class TeamSeeder extends Seeder
        DB::table('teams')->insert(
            [
                [
-                "name"=>"No team",
-                "city"=>"",
-                "country"=>"",
-                "max_player"=>"999999",
-                "max_front"=>"999999",
-                "max_back"=>"999999",
-                "max_center"=>"999999",
-                "max_replace"=>"999999",
-               ],
-               [
                 "name"=>"Municipal Fire Fighter SeaShell's",
                 "city"=>"Charleroi",
                 "country"=>"Belgium",
@@ -34,7 +24,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"2",
                 "max_back"=>"2",
                 "max_center"=>"4",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Pile-Driver Operator Cornsilk's",
@@ -44,7 +34,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"3",
                 "max_back"=>"3",
                 "max_center"=>"4",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Inspector Brown's",
@@ -54,7 +44,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"1",
                 "max_back"=>"2",
                 "max_center"=>"4",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Flight Attendant Olive's",
@@ -64,7 +54,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"2",
                 "max_back"=>"2",
                 "max_center"=>"4",
-                "max_replace"=>"3",
+                "max_replace"=>"3"
                ],
                [
                 "name"=>"Mechanical Door Repairer SpringGreen's",
@@ -74,7 +64,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"1",
                 "max_back"=>"1",
                 "max_center"=>"4",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Horticultural Worker Gold's",
@@ -84,7 +74,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"2",
                 "max_back"=>"2",
                 "max_center"=>"3",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Gaming Service Worker Antique White's",
@@ -94,7 +84,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"2",
                 "max_back"=>"2",
                 "max_center"=>"4",
-                "max_replace"=>"1",
+                "max_replace"=>"1"
                ],
                [
                 "name"=>"Protective Service Worker DarkTurquoise",
@@ -104,7 +94,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"1",
                 "max_back"=>"1",
                 "max_center"=>"3",
-                "max_replace"=>"2",
+                "max_replace"=>"2"
                ],
                [
                 "name"=>"Biomedical Engineer LightGoldenRodYellow",
@@ -114,7 +104,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"2",
                 "max_back"=>"2",
                 "max_center"=>"3",
-                "max_replace"=>"3",
+                "max_replace"=>"3"
                ],
                [
                 "name"=>"Refrigeration Mechanic PaleTurquoise",
@@ -124,7 +114,7 @@ class TeamSeeder extends Seeder
                 "max_front"=>"1",
                 "max_back"=>"1",
                 "max_center"=>"1",
-                "max_replace"=>"1",
+                "max_replace"=>"1"
                ],
            ]
         );
