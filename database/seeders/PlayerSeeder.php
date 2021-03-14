@@ -36,7 +36,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Niue",
                 "position"=>"front",
-                "team_id"=>"2",
+                "team_id"=>NULL,
                 "photo_id"=>"1"
             ],
             [

@@ -16,14 +16,14 @@
             <td>{{$item->name}}</td>
             <td>{{$item->surname}}</td>
             <td>
-                @if ($item->team_id != 1)
+                @if ($item->team_id != NULL)
                     <form action="/teams/{{$item->team_id}}" method="POST">
                         @csrf
                         @method('GET')
                         <button class="btn p-0" type="submit">{{$item->teams->name}}</button>
                     </form>
                 @else
-                    {{$item->teams->name}}
+                    <p>No Team</p>
                 @endif
             </td>
             <td>
