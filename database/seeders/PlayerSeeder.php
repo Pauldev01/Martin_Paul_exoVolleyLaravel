@@ -24,7 +24,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"French Polynesia",
                 "position"=>"front",
-                "team_id"=>"1",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -48,7 +48,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Syrian Arab Republic",
                 "position"=>"replace",
-                "team_id"=>"1",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -71,7 +71,7 @@ class PlayerSeeder extends Seeder
                 "email"=>"ihackett@kovacek.com",
                 "gender"=>"male",
                 "country"=>"Belgium",
-                "position"=>"back",
+                "position"=>"center",
                 "team_id"=>"11",
                 "photo_id"=>"1"
             ],
@@ -95,7 +95,7 @@ class PlayerSeeder extends Seeder
                 "email"=>"sunny05@yahoo.com",
                 "gender"=>"male",
                 "country"=>"Finland",
-                "position"=>"front",
+                "position"=>"center",
                 "team_id"=>"4",
                 "photo_id"=>"1"
             ],
@@ -108,7 +108,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Moldova",
                 "position"=>"replace",
-                "team_id"=>"1",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -179,7 +179,7 @@ class PlayerSeeder extends Seeder
                 "email"=>"pfeffer.korbin@dubuque.net",
                 "gender"=>"female",
                 "country"=>"Philippines",
-                "position"=>"front",
+                "position"=>"center",
                 "team_id"=>"4",
                 "photo_id"=>"1"
             ],
@@ -227,8 +227,8 @@ class PlayerSeeder extends Seeder
                 "email"=>"travon@hotmail.com",
                 "gender"=>"female",
                 "country"=>"France",
-                "position"=>"replace",
-                "team_id"=>"1",
+                "position"=>"center",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -240,7 +240,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"female",
                 "country"=>"Panama",
                 "position"=>"back",
-                "team_id"=>"1",
+                "team_id"=>"8",
                 "photo_id"=>"1"
             ],
             [
@@ -263,8 +263,8 @@ class PlayerSeeder extends Seeder
                 "email"=>"Devil@hotmail.com",
                 "gender"=>"female",
                 "country"=>"Japan",
-                "position"=>"replace",
-                "team_id"=>"1",
+                "position"=>"center",
+                "team_id"=>"4",
                 "photo_id"=>"1"
             ],
             [
@@ -288,7 +288,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Venezuela",
                 "position"=>"center",
-                "team_id"=>"3",
+                "team_id"=>"8",
                 "photo_id"=>"1"
             ],
             [
@@ -335,7 +335,7 @@ class PlayerSeeder extends Seeder
                 "email"=>"grtfly@hotmail.com",
                 "gender"=>"female",
                 "country"=>"Seychelles",
-                "position"=>"front",
+                "position"=>"back",
                 "team_id"=>"11",
                 "photo_id"=>"1"
             ],
@@ -360,7 +360,7 @@ class PlayerSeeder extends Seeder
                 "gender"=>"male",
                 "country"=>"Albania",
                 "position"=>"back",
-                "team_id"=>"1",
+                "team_id"=>"8",
                 "photo_id"=>"1"
             ],
             [
@@ -371,7 +371,7 @@ class PlayerSeeder extends Seeder
                 "email"=>"breakfree@hotmail.com",
                 "gender"=>"male",
                 "country"=>"San Marino",
-                "position"=>"replace",
+                "position"=>"front",
                 "team_id"=>"8",
                 "photo_id"=>"1"
             ],
@@ -385,6 +385,54 @@ class PlayerSeeder extends Seeder
                 "country"=>"Spain",
                 "position"=>"back",
                 "team_id"=>"9",
+                "photo_id"=>"1"
+            ],
+            [
+                "name"=>"Gordon",
+                "surname"=>"Felix",
+                "age"=>"83",
+                "phone"=>"+9865284785154",
+                "email"=>"takecare@hotmail.com",
+                "gender"=>"male",
+                "country"=>"San Marino",
+                "position"=>"front",
+                "team_id"=>"8",
+                "photo_id"=>"1"
+            ],
+            [
+                "name"=>"Fortui",
+                "surname"=>"Saly",
+                "age"=>"35",
+                "phone"=>"+74854777008921",
+                "email"=>"colorado78@hotmail.com",
+                "gender"=>"female",
+                "country"=>"France",
+                "position"=>"center",
+                "team_id"=>"8",
+                "photo_id"=>"1"
+            ],
+            [
+                "name"=>"Lavender",
+                "surname"=>"Grace",
+                "age"=>"19",
+                "phone"=>"+47851577008921",
+                "email"=>"phoenix@gmail.com",
+                "gender"=>"female",
+                "country"=>"Bolivia",
+                "position"=>"front",
+                "team_id"=>"11",
+                "photo_id"=>"1"
+            ],
+            [
+                "name"=>"Hawkins",
+                "surname"=>"John",
+                "age"=>"35",
+                "phone"=>"+74854777008921",
+                "email"=>"exemple@hotmail.com",
+                "gender"=>"male",
+                "country"=>"Philippines",
+                "position"=>"replace",
+                "team_id"=>"11",
                 "photo_id"=>"1"
             ]
         ]);

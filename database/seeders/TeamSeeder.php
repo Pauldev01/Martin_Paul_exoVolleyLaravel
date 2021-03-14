@@ -120,11 +120,11 @@ class TeamSeeder extends Seeder
                 "name"=>"Refrigeration Mechanic PaleTurquoise",
                 "city"=>"Barcelona",
                 "country"=>"Spain",
-                "max_player"=>"7",
+                "max_player"=>"4",
                 "max_front"=>"1",
                 "max_back"=>"1",
-                "max_center"=>"3",
-                "max_replace"=>"2",
+                "max_center"=>"1",
+                "max_replace"=>"1",
                ],
            ]
         );

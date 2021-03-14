@@ -31,7 +31,51 @@ class DashboardController extends Controller
             }
         }
 
-        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout', 'playerCountry'));
+        // Full teams
+        $fullTeam = [];
+        foreach ($teams as $item) {
+            if (count($players->where('team_id', $item->id)) == $item->max_player) {
+                array_push($fullTeam, $item);
+            }
+        }
+
+        // Empty teams
+        $emptyTeam = [];
+        foreach ($teams as $item) {
+            if (count($players->where('team_id', $item->id)) == 0) {
+                array_push($emptyTeam, $item);
+            }
+        }
+
+        // Team EU
+        $euTeams = [];
+        $euCountry = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Republic of Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden'];
+        foreach ($teams as $team) {
+            foreach ($euCountry as $eu) {
+                if($team->country == $eu) {
+                    array_push($euTeams, $team);
+                }
+            }
+        }
+
+        // Team outside EU
+        // $outEuTeams = $teamMatch->filter(function($value, $euTeams){
+        //     return $value != $euTeams[0]->name || $value != $euTeams[1]->name || $value != $euTeams[2]->name;
+        // });
+        // // foreach ($teamMatch as $team) {
+        //     foreach ($euCountry as $eu) {
+        //         // dd($eu);
+        //         if($team->name != $eu) {
+
+        //             array_push($outEuTeams, $team);
+        //         } else {
+        //         }
+        //     }
+        // }
+
+        // dd($outEuTeams);
+
+        return view('pages.dashboard', compact('players', 'teams', 'photos', 'playersWith', 'playersWithout', 'playerCountry', 'fullTeam', 'emptyTeam', 'euTeams', 'teamMatch'));
     }
 
     /**
