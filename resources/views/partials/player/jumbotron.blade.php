@@ -8,7 +8,7 @@
             <p class="lead">Gender : <span class="text-capitalize">{{$show->gender}}</span></p>
             <p class="lead">Country : {{$show->country}}</p>
             <p class="lead">Position : <span class="text-capitalize">{{$show->position}}</span></p>
-            <p class="lead">Team : {{$show->teams->name}}</p>
+            <p class="lead">Team : {{$show->team_id != NULL ? $show->teams->name : 'No Team'}}</p>
         </div>
         <img class="col-5" src="{{asset('img/'.$show->photos->src)}}" alt="">
     </div>

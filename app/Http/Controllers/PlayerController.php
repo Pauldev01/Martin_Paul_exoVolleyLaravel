@@ -107,15 +107,17 @@ class PlayerController extends Controller
     {
         $updateEntry = Player::find($id);
         $img = Photo::find($updateEntry->photo_id);
-        if ($img->src != 'photo.jpg') {
-            Storage::disk('public')->delete('img/'.$img->src);
-            $request->file('src')->storePublicly('img/', 'public');
-            $img->src = $request->file('src')->hashName();
-        } else {
-            $request->file('src')->storePublicly('img/', 'public');
-            $imgNew = new Photo;
-            $imgNew->src = $request->file('src')->hashName();
-            $imgNew->save();
+        if ($request->src != NULL) {
+            if ($img->src != 'photo.jpg') {
+                Storage::disk('public')->delete('img/'.$img->src);
+                $request->file('src')->storePublicly('img/', 'public');
+                $img->src = $request->file('src')->hashName();
+            } else {
+                $request->file('src')->storePublicly('img/', 'public');
+                $imgNew = new Photo;
+                $imgNew->src = $request->file('src')->hashName();
+                $imgNew->save();
+            }
         }
         $img->save();
 
@@ -128,7 +130,9 @@ class PlayerController extends Controller
         $updateEntry->country = $request->country;
         $updateEntry->team_id = $request->team_id;
         $updateEntry->position = $request->position;
-        $updateEntry->photo_id = $imgNew->id ? $imgNew->id : $img->id;
+        if ($request->src != NULL) {
+            $updateEntry->photo_id = $imgNew->id ? $imgNew->id : $img->id ;
+        }
         
         $updateEntry->save();
         return redirect('/players');

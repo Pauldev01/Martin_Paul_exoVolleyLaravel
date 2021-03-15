@@ -110,6 +110,11 @@ class TeamController extends Controller
     public function destroy($id)
     {
         $destroy = Team::find($id);
+        // dd($destroy->players);
+        foreach ($destroy->players as $player) {
+            $player->team_id = NULL;
+            $player->save();
+        }
         $destroy->delete();
         return redirect('/teams');
     }
