@@ -1,4 +1,13 @@
 <h1 class="text-center my-5">Edit Player</h1>
+@if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+  @endif
 <form class="my-5" action="/players/{{$show->id}}" method="POST" enctype="multipart/form-data">
   @csrf
   @method('PUT')

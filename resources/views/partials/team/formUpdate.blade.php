@@ -1,5 +1,15 @@
 <h1 class="text-center my-5">Update Team</h1>
 <form class="my-5" action="/teams/{{$show->id}}" method="POST">
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+  @endif
+  
   @csrf
   @method('PUT')
     <div class="form-group">

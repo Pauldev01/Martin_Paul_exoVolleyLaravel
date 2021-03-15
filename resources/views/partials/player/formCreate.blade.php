@@ -3,27 +3,27 @@
   @csrf
     <div class="form-group">
       <label for="exampleInputEmail1">Name</label>
-      <input type="text" name="name" class="form-control">
+      <input type="text" name="name" class="form-control" value="{{old("name")}}">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Surname</label>
-      <input type="text" name="surname" class="form-control">
+      <input type="text" name="surname" class="form-control" value="{{old("surname")}}">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Age</label>
-      <input type="number" name="age" class="form-control">
+      <input type="number" name="age" class="form-control" value="{{old("age")}}">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Phone</label>
-      <input type="text" name="phone" class="form-control">
+      <input type="text" name="phone" class="form-control" value="{{old("phone")}}">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
-      <input type="email" name="email" class="form-control">
+      <input type="email" name="email" class="form-control" value="{{old("email")}}">
     </div>
     <div class="form-group">
       <label for="">Gender</label>
-      <select class="form-control" name="gender" id="">
+      <select class="form-control" name="gender" id="" >
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
@@ -31,7 +31,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Country</label>
-      <input type="text" name="country" class="form-control">
+      <input type="text" name="country" class="form-control" value="{{old("country")}}">
     </div>
     <div class="form-group">
       <label for="">Position</label>
